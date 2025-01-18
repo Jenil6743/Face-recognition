@@ -13,13 +13,13 @@ import aiohttp
 
 app = FastAPI()
 
-mongo_uri = "mongodb://3.111.49.240:27017/"
+mongo_uri = "mongodb://localhost:27017/"
 db_name = "production"
 client = MongoClient(mongo_uri)
 db = client[db_name]
 users_collection = db.users
 mediaclients_collection = db['mediaclients']
-sas_obj_id = ObjectId('675aa5756bdb6349ea4cecee')
+client = ObjectId('675aa5756bdb6349ea4cecee')
 
 with open("face_insight.pkl", "rb") as f:
     data = pickle.load(f)
